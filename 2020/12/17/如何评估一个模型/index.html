@@ -79,23 +79,24 @@
 
 
 
-<meta name="description" content="什么是模型评估如何进行模型评估 最简单的模型评估方法就是留出数据集的一部分评估，且这一部分数据必须是模型以前没见过的。  具体到不同场景有不同方法： 1.一个简单的模型将数据集分割为一个单独的训练和测试集（留出法）。 在前者上训练模型，在后者上评估模型(这里的评估指的是计算性能指标，如Precision、Accuracy、Recall、ROC AUC等)。  sklearn的train_test_">
+<meta name="description" content="什么是模型评估如何进行模型评估 最简单的模型评估方法就是留出数据集的一部分评估，且这一部分数据必须是模型以前没见过的。  具体到不同场景有不同方法： 一个简单的模型将数据集分割为一个单独的训练和测试集（留出法）。 在前者上训练模型，在后者上评估模型(这里的评估指的是计算性能指标，如Precision、Accuracy、Recall、ROC AUC等)。  sklearn的train_test_sp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何评估一个模型">
 <meta property="og:url" content="https://youngbai-c.github.io/youngbai.github.io/2020/12/17/%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AA%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="youH Blog">
-<meta property="og:description" content="什么是模型评估如何进行模型评估 最简单的模型评估方法就是留出数据集的一部分评估，且这一部分数据必须是模型以前没见过的。  具体到不同场景有不同方法： 1.一个简单的模型将数据集分割为一个单独的训练和测试集（留出法）。 在前者上训练模型，在后者上评估模型(这里的评估指的是计算性能指标，如Precision、Accuracy、Recall、ROC AUC等)。  sklearn的train_test_">
+<meta property="og:description" content="什么是模型评估如何进行模型评估 最简单的模型评估方法就是留出数据集的一部分评估，且这一部分数据必须是模型以前没见过的。  具体到不同场景有不同方法： 一个简单的模型将数据集分割为一个单独的训练和测试集（留出法）。 在前者上训练模型，在后者上评估模型(这里的评估指的是计算性能指标，如Precision、Accuracy、Recall、ROC AUC等)。  sklearn的train_test_sp">
 <meta property="og:locale">
-<meta property="og:image" content="https://youngbai-c.github.io/images/20201217_3_split.png">
+<meta property="og:image" content="https://youngbai-c.github.io/youngbai.github.io/2020/12/17/%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AA%E6%A8%A1%E5%9E%8B/source/images/20201217_3_split.png">
 <meta property="og:image" content="https://static.packt-cdn.com/products/9781789617740/graphics/b04c27c5-7e3f-428a-9aa6-bb3ebcd3584c.png">
 <meta property="og:image" content="https://miro.medium.com/max/759/1*yYctsCAlkQHixEHYy0dHPw.png">
 <meta property="og:image" content="https://miro.medium.com/max/741/1*FPT_ykB5W226a-GW3g8l5A.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*3eRQjKTr18QOuozyl3daMQ.png">
 <meta property="article:published_time" content="2020-12-17T02:10:15.000Z">
-<meta property="article:modified_time" content="2020-12-17T10:27:30.515Z">
+<meta property="article:modified_time" content="2020-12-17T11:11:06.122Z">
 <meta property="article:author" content="白友恒">
 <meta property="article:tag" content="模型评估">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://youngbai-c.github.io/images/20201217_3_split.png">
+<meta name="twitter:image" content="https://youngbai-c.github.io/youngbai.github.io/2020/12/17/%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AA%E6%A8%A1%E5%9E%8B/source/images/20201217_3_split.png">
 
 
 
@@ -365,16 +366,16 @@
 <p>最简单的模型评估方法就是留出数据集的一部分评估，且这一部分数据必须是模型以前没见过的。</p>
 </blockquote>
 <p>具体到不同场景有不同方法：</p>
-<h2 id="1-一个简单的模型"><a href="#1-一个简单的模型" class="headerlink" title="1.一个简单的模型"></a>1.一个简单的模型</h2><p>将数据集分割为一个单独的训练和测试集（留出法）。</p>
+<h2 id="一个简单的模型"><a href="#一个简单的模型" class="headerlink" title="一个简单的模型"></a>一个简单的模型</h2><p>将数据集分割为一个单独的训练和测试集（留出法）。</p>
 <p>在前者上训练模型，在后者上评估模型(这里的评估指的是计算性能指标，如Precision、Accuracy、Recall、ROC AUC等)。</p>
-<p><img src="/images/20201217_3_split.png"></p>
+<p><img src="source/images/20201217_3_split.png"></p>
 <p>sklearn的<a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">train_test_split</a>有具体的实现。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="number">0.33</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-训练模型并调整（优化）其超参数"><a href="#2-训练模型并调整（优化）其超参数" class="headerlink" title="2.训练模型并调整（优化）其超参数"></a>2.训练模型并调整（优化）其超参数</h2><p>将数据集拆分为单独的测试和训练集。 在训练集上使用诸如k折交叉验证之类的技术来找到模型的<strong>“最佳”超参数集</strong>。 </p>
+<h2 id="训练模型并调整（优化）其超参数"><a href="#训练模型并调整（优化）其超参数" class="headerlink" title="训练模型并调整（优化）其超参数"></a>训练模型并调整（优化）其超参数</h2><p>将数据集拆分为单独的测试和训练集。 在训练集上使用诸如k折交叉验证之类的技术来找到模型的<strong>“最佳”超参数集</strong>。 </p>
 <p>如果完成了超参数调整，使用独立的测试集来获得对其性能的无偏估计。 </p>
 <p>下面我使用一个图来说明不同之处：</p>
-<p>![](/images/20201217_4_split and evaluation.png)</p>
+<p>![](source/images/20201217_4_split and evaluation.png)</p>
 <p>主要步骤为：</p>
 <ol>
 <li>训练数据集划分为训练子集和验证集</li>
@@ -382,7 +383,7 @@
 <li>评估验证集以优化其超参数</li>
 <li>在独立的测试集上进行测试</li>
 </ol>
-<h2 id="3-建立不同的模型并比较不同的算法"><a href="#3-建立不同的模型并比较不同的算法" class="headerlink" title="3.建立不同的模型并比较不同的算法"></a>3.建立不同的模型并比较不同的算法</h2><p>这里先介绍一下K折验证法：</p>
+<h2 id="建立不同的模型并比较不同的算法"><a href="#建立不同的模型并比较不同的算法" class="headerlink" title="建立不同的模型并比较不同的算法"></a>建立不同的模型并比较不同的算法</h2><p>这里先介绍一下K折验证法：</p>
 <p>在k倍交叉验证中，将数据集划分为k个相等大小的样本。 在这k个子样本中，保留了一个子样本作为用于测试模型的验证数据，其余的k-1个子样本用作训练数据。 然后，此交叉验证过程将重复k次，k个子样本中的每一个仅被用作一次验证数据。 然后可以将k个结果取平均值以产生单个估计。</p>
 <img src="https://static.packt-cdn.com/products/9781789617740/graphics/b04c27c5-7e3f-428a-9aa6-bb3ebcd3584c.png" alt="img" style="zoom:67%;" />
 
@@ -397,7 +398,7 @@
 <li>True negatives(TN):本身是反例，预测<strong>也</strong>为反例的样本数量</li>
 <li>False negatives(FN)：本身是正例，预测为反例的样本数量</li>
 </ul>
-<h2 id="１-Confusion-Matrix"><a href="#１-Confusion-Matrix" class="headerlink" title="１.Confusion Matrix"></a>１.Confusion Matrix</h2><p>是上述参数的矩阵形式的表示。可以使用可视化和代码呈现:</p>
+<h2 id="Confusion-Matrix"><a href="#Confusion-Matrix" class="headerlink" title="Confusion Matrix"></a>Confusion Matrix</h2><p>是上述参数的矩阵形式的表示。可以使用可视化和代码呈现:</p>
 <p><img src="https://miro.medium.com/max/759/1*yYctsCAlkQHixEHYy0dHPw.png" alt="Confusion Matrix"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> confusion_matrix</span><br><span class="line">y_actu = [<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">y_pred = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">confusion_matrix(y_actu, y_pred)</span><br><span class="line"><span class="comment">## array([[3, 0],</span></span><br><span class="line"><span class="comment">##       [2, 7]])</span></span><br></pre></td></tr></table></figure>
 
@@ -474,13 +475,13 @@
 <p>我们可以可视化这一张图表试试</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_confusion_matrix</span>(<span class="params">df_confusion, title=<span class="string">&#x27;Confusion matrix&#x27;</span>, cmap=plt.cm.gray_r</span>):</span></span><br><span class="line">    plt.matshow(df_confusion, cmap=cmap) <span class="comment"># imshow</span></span><br><span class="line">    <span class="comment">#plt.title(title)</span></span><br><span class="line">    plt.colorbar()</span><br><span class="line">    tick_marks = np.arange(<span class="built_in">len</span>(df_confusion.columns))</span><br><span class="line">    plt.xticks(tick_marks, df_confusion.columns, rotation=<span class="number">45</span>)</span><br><span class="line">    plt.yticks(tick_marks, df_confusion.index)</span><br><span class="line">    <span class="comment">#plt.tight_layout()</span></span><br><span class="line">    plt.ylabel(df_confusion.index.name)</span><br><span class="line">    plt.xlabel(df_confusion.columns.name)</span><br><span class="line"></span><br><span class="line">plot_confusion_matrix(df_confusion)</span><br></pre></td></tr></table></figure>
 
-<p>![](/images/20201217_1_confusion matrix.png)</p>
-<h3 id="1-Accuracy"><a href="#1-Accuracy" class="headerlink" title="1.Accuracy"></a>1.Accuracy</h3><p>评判模型最常用的指标，实际上并不是性能的明确指标。当数据集不平衡时，此情况不适用。</p>
+<p>![](source/images/20201217_1_confusion matrix.png)</p>
+<h3 id="Accuracy"><a href="#Accuracy" class="headerlink" title="Accuracy"></a>Accuracy</h3><p>评判模型最常用的指标，实际上并不是性能的明确指标。当数据集不平衡时，此情况不适用。</p>
 <p>以癌症检测模型为例。患癌症的几率非常低。假设在100名患者中，有90人没有患癌症，剩下的10人实际上患有癌症。我们不想错过一个患有癌症却未被发现的病人(false negative)。检测每个人是否患有癌症的准确率为90%。这个模型在这里什么也没做，只是对所有100个预测都给出了癌症的概率。此情况需要更好的替代方案。</p>
-<h3 id="2-Precision"><a href="#2-Precision" class="headerlink" title="2.Precision"></a>2.Precision</h3><p>正实例占<strong>预测的正实例</strong>总数的百分比分母(TP + FP)是对整个给定数据集做的正例的模型预测。<br>$$<br>\dfrac{TP }{TP+FP }<br>$$</p>
-<h3 id="3-Recall"><a href="#3-Recall" class="headerlink" title="3.Recall"></a>3.Recall</h3><p>正实例占<strong>实际正实例</strong>总数的百分比。分母(TP + FN)是数据集中出现的积极实例的实际数量。<br>$$<br>\dfrac{TP }{TP+FN }<br>$$</p>
-<h3 id="4-Specificity"><a href="#4-Specificity" class="headerlink" title="4.Specificity"></a>4.Specificity</h3><p>反实例在实际总反实例中所占的百分比。分母（TN + FP）是数据集中存在的否定实例的实际数量。 它类似于召回，但变化是负面的。一种衡量类之间是否分离的度量。<br>$$<br>\dfrac{TN }{TN+FP }<br>$$</p>
-<h3 id="5-F1-score"><a href="#5-F1-score" class="headerlink" title="5.F1-score"></a>5.F1-score</h3><p>是精度和召回率的调和平均数。因此，如果正面预测确实是正面的(precision)，并且没有错过正面预测并预测它们是负面的(recall)，那么模型在F1得分上表现得很好。</p>
+<h3 id="Precision"><a href="#Precision" class="headerlink" title="Precision"></a>Precision</h3><p>正实例占<strong>预测的正实例</strong>总数的百分比分母(TP + FP)是对整个给定数据集做的正例的模型预测。<br>$$<br>\dfrac{TP }{TP+FP }<br>$$</p>
+<h3 id="Recall"><a href="#Recall" class="headerlink" title="Recall"></a>Recall</h3><p>正实例占<strong>实际正实例</strong>总数的百分比。分母(TP + FN)是数据集中出现的积极实例的实际数量。<br>$$<br>\dfrac{TP }{TP+FN }<br>$$</p>
+<h3 id="Specificity"><a href="#Specificity" class="headerlink" title="Specificity"></a>Specificity</h3><p>反实例在实际总反实例中所占的百分比。分母（TN + FP）是数据集中存在的否定实例的实际数量。 它类似于召回，但变化是负面的。一种衡量类之间是否分离的度量。<br>$$<br>\dfrac{TN }{TN+FP }<br>$$</p>
+<h3 id="F1-score"><a href="#F1-score" class="headerlink" title="F1-score"></a>F1-score</h3><p>是精度和召回率的调和平均数。因此，如果正面预测确实是正面的(precision)，并且没有错过正面预测并预测它们是负面的(recall)，那么模型在F1得分上表现得很好。</p>
 <p>$$<br>\dfrac{2}{\dfrac{1}{precision}+\dfrac{1}{recall}}=\dfrac{2<em>precision</em>recall }{precision+recall}<br>$$<br>该方法的一个缺点在于precision和recall都被同等重视，但是在实际应用中，我们可能有指标偏好性，因此F1分数可能不是精确的指标。因此，加权F1得分（ weighted-F1 score ）或查看PR或ROC曲线都可以提供帮助。</p>
 <p>我们可以使用以下代码生成confusionmatrix，再利用公式计算以上数据以上数据</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_conf_norm = df_confusion / df_confusion.<span class="built_in">sum</span>(axis=<span class="number">1</span>)</span><br><span class="line">df_conf_norm</span><br></pre></td></tr></table></figure>
@@ -522,10 +523,13 @@
 <p>使用classification_report可以得到上述值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> classification_report, confusion_matrix</span><br><span class="line">y_actu = [<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">y_pred = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">print(classification_report(y_actu, y_pred))</span><br></pre></td></tr></table></figure>
 
-<p>![](/images/20201217_2_confusion matrix report.png)</p>
-<h2 id="2-PR曲线"><a href="#2-PR曲线" class="headerlink" title="2.PR曲线"></a>2.PR曲线</h2><p>它是不同阈值在precision和recall之间的曲线。下图中，有6个预测变量，分别显示了它们在各种阈值下的精确调用曲线。 图的右上方（黑色曲线）是我们获得高精度和召回率的理想空间。 AUC就是曲线下的面积。 其数值越高越好。</p>
+<p>![](source/images/20201217_2_confusion matrix report.png)</p>
+<h2 id="PR曲线"><a href="#PR曲线" class="headerlink" title="PR曲线"></a>PR曲线</h2><p>它是不同阈值在precision和recall之间的曲线。下图中，有6个预测变量，分别显示了它们在各种阈值下的精确调用曲线。 图的右上方（黑色曲线）是我们获得高精度和召回率的理想空间。 AUC就是曲线下的面积。 其数值越高越好。</p>
 <p><img src="https://miro.medium.com/max/741/1*FPT_ykB5W226a-GW3g8l5A.png" alt="Image for post"></p>
-<h2 id="3-ROC-曲线"><a href="#3-ROC-曲线" class="headerlink" title="3.ROC 曲线"></a>3.ROC 曲线</h2><h1 id="模型评估案例"><a href="#模型评估案例" class="headerlink" title="模型评估案例"></a>模型评估案例</h1><h2 id="场景１：评估一个简单模型"><a href="#场景１：评估一个简单模型" class="headerlink" title="场景１：评估一个简单模型"></a>场景１：评估一个简单模型</h2><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<h2 id="ROC-曲线"><a href="#ROC-曲线" class="headerlink" title="ROC 曲线"></a>ROC 曲线</h2><p>ROC针对各种阈值绘制了针对 True Positive Rate(TPR)和False Positive Rate(FPR)的图表。随着TPR的增加，FPR也跟着增加。如图左所示，我们想要四个类别更靠近左上角的阈值。如图右所示，在给定的数据集上比较不同的预测变量也变得容易了，您可以根据手头的应用选择阈值。<br>$$<br>TPR = Recall = \dfrac{TP}{TP+FN}<br>$$</p>
+<p>$$<br>FPR = 1 - Specificity = \dfrac {FP}{FP+TN}<br>$$</p>
+<p><img src="https://miro.medium.com/max/1400/1*3eRQjKTr18QOuozyl3daMQ.png" alt="Image for post"></p>
+<h1 id="模型评估案例"><a href="#模型评估案例" class="headerlink" title="模型评估案例"></a>模型评估案例</h1><h2 id="场景１：评估一个简单模型"><a href="#场景１：评估一个简单模型" class="headerlink" title="场景１：评估一个简单模型"></a>场景１：评估一个简单模型</h2><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
 <li><a target="_blank" rel="noopener" href="https://towardsdatascience.com/various-ways-to-evaluate-a-machine-learning-models-performance-230449055f15">https://towardsdatascience.com/various-ways-to-evaluate-a-machine-learning-models-performance-230449055f15</a></li>
 <li></li>
 </ol>
@@ -699,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0"><span class="nav-number">1.</span> <span class="nav-text">什么是模型评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0"><span class="nav-number">2.</span> <span class="nav-text">如何进行模型评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">1.一个简单的模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E5%B9%B6%E8%B0%83%E6%95%B4%EF%BC%88%E4%BC%98%E5%8C%96%EF%BC%89%E5%85%B6%E8%B6%85%E5%8F%82%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">2.训练模型并调整（优化）其超参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%BB%BA%E7%AB%8B%E4%B8%8D%E5%90%8C%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%B9%B6%E6%AF%94%E8%BE%83%E4%B8%8D%E5%90%8C%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">3.建立不同的模型并比较不同的算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87"><span class="nav-number">3.</span> <span class="nav-text">模型评估指标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%91-Confusion-Matrix"><span class="nav-number">3.1.</span> <span class="nav-text">１.Confusion Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Accuracy"><span class="nav-number">3.1.1.</span> <span class="nav-text">1.Accuracy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Precision"><span class="nav-number">3.1.2.</span> <span class="nav-text">2.Precision</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Recall"><span class="nav-number">3.1.3.</span> <span class="nav-text">3.Recall</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Specificity"><span class="nav-number">3.1.4.</span> <span class="nav-text">4.Specificity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-F1-score"><span class="nav-number">3.1.5.</span> <span class="nav-text">5.F1-score</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-PR%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.2.</span> <span class="nav-text">2.PR曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-ROC-%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.3.</span> <span class="nav-text">3.ROC 曲线</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E6%A1%88%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">模型评估案例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%EF%BC%91%EF%BC%9A%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.1.</span> <span class="nav-text">场景１：评估一个简单模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0"><span class="nav-number">1.</span> <span class="nav-text">什么是模型评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0"><span class="nav-number">2.</span> <span class="nav-text">如何进行模型评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">一个简单的模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E5%B9%B6%E8%B0%83%E6%95%B4%EF%BC%88%E4%BC%98%E5%8C%96%EF%BC%89%E5%85%B6%E8%B6%85%E5%8F%82%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">训练模型并调整（优化）其超参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E4%B8%8D%E5%90%8C%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%B9%B6%E6%AF%94%E8%BE%83%E4%B8%8D%E5%90%8C%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">建立不同的模型并比较不同的算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87"><span class="nav-number">3.</span> <span class="nav-text">模型评估指标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Confusion-Matrix"><span class="nav-number">3.1.</span> <span class="nav-text">Confusion Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Accuracy"><span class="nav-number">3.1.1.</span> <span class="nav-text">Accuracy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Precision"><span class="nav-number">3.1.2.</span> <span class="nav-text">Precision</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Recall"><span class="nav-number">3.1.3.</span> <span class="nav-text">Recall</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Specificity"><span class="nav-number">3.1.4.</span> <span class="nav-text">Specificity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F1-score"><span class="nav-number">3.1.5.</span> <span class="nav-text">F1-score</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PR%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.2.</span> <span class="nav-text">PR曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROC-%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.3.</span> <span class="nav-text">ROC 曲线</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E6%A1%88%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">模型评估案例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%EF%BC%91%EF%BC%9A%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.1.</span> <span class="nav-text">场景１：评估一个简单模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
