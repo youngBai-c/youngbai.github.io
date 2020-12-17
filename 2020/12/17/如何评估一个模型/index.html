@@ -81,22 +81,22 @@
 
 <meta name="description" content="什么是模型评估如何进行模型评估 最简单的模型评估方法就是留出数据集的一部分评估，且这一部分数据必须是模型以前没见过的。  具体到不同场景有不同方法： 一个简单的模型将数据集分割为一个单独的训练和测试集（留出法）。 在前者上训练模型，在后者上评估模型(这里的评估指的是计算性能指标，如Precision、Accuracy、Recall、ROC AUC等)。  sklearn的train_test_sp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何评估一个模型">
+<meta property="og:title" content="如何评估一个模型?">
 <meta property="og:url" content="https://youngbai-c.github.io/youngbai.github.io/2020/12/17/%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AA%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="youH Blog">
 <meta property="og:description" content="什么是模型评估如何进行模型评估 最简单的模型评估方法就是留出数据集的一部分评估，且这一部分数据必须是模型以前没见过的。  具体到不同场景有不同方法： 一个简单的模型将数据集分割为一个单独的训练和测试集（留出法）。 在前者上训练模型，在后者上评估模型(这里的评估指的是计算性能指标，如Precision、Accuracy、Recall、ROC AUC等)。  sklearn的train_test_sp">
 <meta property="og:locale">
-<meta property="og:image" content="https://youngbai-c.github.io/youngbai.github.io/2020/12/17/%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AA%E6%A8%A1%E5%9E%8B/source/images/20201217_3_split.png">
+<meta property="og:image" content="https://youngbai-c.github.io/youngbai.github.io/2020/12/17/%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AA%E6%A8%A1%E5%9E%8B/20201217_3_split.png">
 <meta property="og:image" content="https://static.packt-cdn.com/products/9781789617740/graphics/b04c27c5-7e3f-428a-9aa6-bb3ebcd3584c.png">
 <meta property="og:image" content="https://miro.medium.com/max/759/1*yYctsCAlkQHixEHYy0dHPw.png">
 <meta property="og:image" content="https://miro.medium.com/max/741/1*FPT_ykB5W226a-GW3g8l5A.png">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*3eRQjKTr18QOuozyl3daMQ.png">
 <meta property="article:published_time" content="2020-12-17T02:10:15.000Z">
-<meta property="article:modified_time" content="2020-12-17T11:11:06.122Z">
+<meta property="article:modified_time" content="2020-12-17T11:17:41.280Z">
 <meta property="article:author" content="白友恒">
 <meta property="article:tag" content="模型评估">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://youngbai-c.github.io/youngbai.github.io/2020/12/17/%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AA%E6%A8%A1%E5%9E%8B/source/images/20201217_3_split.png">
+<meta name="twitter:image" content="https://youngbai-c.github.io/youngbai.github.io/2020/12/17/%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AA%E6%A8%A1%E5%9E%8B/20201217_3_split.png">
 
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <title>如何评估一个模型 | youH Blog</title>
+  <title>如何评估一个模型? | youH Blog</title>
   
 
 
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何评估一个模型</h1>
+          <h1 class="post-title" itemprop="name headline">如何评估一个模型?</h1>
         
 
         <div class="post-meta">
@@ -368,14 +368,14 @@
 <p>具体到不同场景有不同方法：</p>
 <h2 id="一个简单的模型"><a href="#一个简单的模型" class="headerlink" title="一个简单的模型"></a>一个简单的模型</h2><p>将数据集分割为一个单独的训练和测试集（留出法）。</p>
 <p>在前者上训练模型，在后者上评估模型(这里的评估指的是计算性能指标，如Precision、Accuracy、Recall、ROC AUC等)。</p>
-<p><img src="source/images/20201217_3_split.png"></p>
+<p><img src="20201217_3_split.png"></p>
 <p>sklearn的<a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">train_test_split</a>有具体的实现。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="number">0.33</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
 
 <h2 id="训练模型并调整（优化）其超参数"><a href="#训练模型并调整（优化）其超参数" class="headerlink" title="训练模型并调整（优化）其超参数"></a>训练模型并调整（优化）其超参数</h2><p>将数据集拆分为单独的测试和训练集。 在训练集上使用诸如k折交叉验证之类的技术来找到模型的<strong>“最佳”超参数集</strong>。 </p>
 <p>如果完成了超参数调整，使用独立的测试集来获得对其性能的无偏估计。 </p>
 <p>下面我使用一个图来说明不同之处：</p>
-<p>![](source/images/20201217_4_split and evaluation.png)</p>
+<p>![](20201217_4_split and evaluation.png)</p>
 <p>主要步骤为：</p>
 <ol>
 <li>训练数据集划分为训练子集和验证集</li>
@@ -475,7 +475,7 @@
 <p>我们可以可视化这一张图表试试</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_confusion_matrix</span>(<span class="params">df_confusion, title=<span class="string">&#x27;Confusion matrix&#x27;</span>, cmap=plt.cm.gray_r</span>):</span></span><br><span class="line">    plt.matshow(df_confusion, cmap=cmap) <span class="comment"># imshow</span></span><br><span class="line">    <span class="comment">#plt.title(title)</span></span><br><span class="line">    plt.colorbar()</span><br><span class="line">    tick_marks = np.arange(<span class="built_in">len</span>(df_confusion.columns))</span><br><span class="line">    plt.xticks(tick_marks, df_confusion.columns, rotation=<span class="number">45</span>)</span><br><span class="line">    plt.yticks(tick_marks, df_confusion.index)</span><br><span class="line">    <span class="comment">#plt.tight_layout()</span></span><br><span class="line">    plt.ylabel(df_confusion.index.name)</span><br><span class="line">    plt.xlabel(df_confusion.columns.name)</span><br><span class="line"></span><br><span class="line">plot_confusion_matrix(df_confusion)</span><br></pre></td></tr></table></figure>
 
-<p>![](source/images/20201217_1_confusion matrix.png)</p>
+<p>![](20201217_1_confusion matrix.png)</p>
 <h3 id="Accuracy"><a href="#Accuracy" class="headerlink" title="Accuracy"></a>Accuracy</h3><p>评判模型最常用的指标，实际上并不是性能的明确指标。当数据集不平衡时，此情况不适用。</p>
 <p>以癌症检测模型为例。患癌症的几率非常低。假设在100名患者中，有90人没有患癌症，剩下的10人实际上患有癌症。我们不想错过一个患有癌症却未被发现的病人(false negative)。检测每个人是否患有癌症的准确率为90%。这个模型在这里什么也没做，只是对所有100个预测都给出了癌症的概率。此情况需要更好的替代方案。</p>
 <h3 id="Precision"><a href="#Precision" class="headerlink" title="Precision"></a>Precision</h3><p>正实例占<strong>预测的正实例</strong>总数的百分比分母(TP + FP)是对整个给定数据集做的正例的模型预测。<br>$$<br>\dfrac{TP }{TP+FP }<br>$$</p>
@@ -523,7 +523,7 @@
 <p>使用classification_report可以得到上述值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> classification_report, confusion_matrix</span><br><span class="line">y_actu = [<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">y_pred = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">print(classification_report(y_actu, y_pred))</span><br></pre></td></tr></table></figure>
 
-<p>![](source/images/20201217_2_confusion matrix report.png)</p>
+<p>![](20201217_2_confusion matrix report.png)</p>
 <h2 id="PR曲线"><a href="#PR曲线" class="headerlink" title="PR曲线"></a>PR曲线</h2><p>它是不同阈值在precision和recall之间的曲线。下图中，有6个预测变量，分别显示了它们在各种阈值下的精确调用曲线。 图的右上方（黑色曲线）是我们获得高精度和召回率的理想空间。 AUC就是曲线下的面积。 其数值越高越好。</p>
 <p><img src="https://miro.medium.com/max/741/1*FPT_ykB5W226a-GW3g8l5A.png" alt="Image for post"></p>
 <h2 id="ROC-曲线"><a href="#ROC-曲线" class="headerlink" title="ROC 曲线"></a>ROC 曲线</h2><p>ROC针对各种阈值绘制了针对 True Positive Rate(TPR)和False Positive Rate(FPR)的图表。随着TPR的增加，FPR也跟着增加。如图左所示，我们想要四个类别更靠近左上角的阈值。如图右所示，在给定的数据集上比较不同的预测变量也变得容易了，您可以根据手头的应用选择阈值。<br>$$<br>TPR = Recall = \dfrac{TP}{TP+FN}<br>$$</p>
